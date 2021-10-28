@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto9001;
+
+option go_package="./getUser/proto9001";
+
+message RequestFor9001 {
+    string Name = 1;
+}
+
+message ResponseFor9001 {
+    string Name = 1;
+    string Class = 2;
+    int64 Roll = 3;
+}
+
+service UserService9001 {
+  rpc GetUser(RequestFor9001) returns (ResponseFor9001);
+}

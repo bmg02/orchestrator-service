@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto9000;
+
+option go_package="./getUserByName/proto9000";
+
+message RequestFor9000 {
+    string Name = 1;
+}
+
+message ResponseFor9000 {
+    string Name = 1;
+    string Class = 2;
+    int64 Roll = 3;
+}
+
+service UserService9000 {
+  rpc GetUserByName(RequestFor9000) returns (ResponseFor9000);
+}

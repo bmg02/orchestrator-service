@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto10000;
+
+option go_package="./datamock/proto10000";
+
+message RequestFor10000 {
+    string Name = 1;
+}
+
+message ResponseFor10000 {
+    string Name = 1;
+    string Class = 2;
+    int64 Roll = 3;
+}
+
+service UserService {
+  rpc GetUserMockData(RequestFor10000) returns (ResponseFor10000);
+}
